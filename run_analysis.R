@@ -20,15 +20,20 @@ workdir <- "C:/Users/Hans/Documents/R/Coursera/data-cleaning/Assignement/UCI HAR
 getwd(workdir)
 
 #Create the raw training and test data-sets
-subjecttrain <- read.table("train/subject_train.txt", header = FALSE)
-activitytrain <- read.table("train/y_train.txt", header = FALSE)
-featurestrain <- read.table("train/X_train.txt", header = FALSE)
-subjecttest <- read.table("test/subject_test.txt", header = FALSE)
-activityTest <- read.table("test/y_test.txt", header = FALSE)
-featuresTest <- read.table("test/X_test.txt", header = FALSE)
+strain <- read.table("train/subject_train.txt", header = FALSE)
+xtrain <- read.table("train/y_train.txt", header = FALSE)
+ytrain <- read.table("train/X_train.txt", header = FALSE)
+stest <- read.table("test/subject_test.txt", header = FALSE)
+ytest <- read.table("test/y_test.txt", header = FALSE)
+xtest <- read.table("test/X_test.txt", header = FALSE)
 
 featuress <- read.table("features.txt")
 labels <- read.table("activity_labels.txt", header = FALSE)
+
+# merge train
+sytrain <- merge(strain, ytrain, all=TRUE)
+syxtrain <- merge(sytrain, xtrain, all=TRUE)
+
 
 
 
