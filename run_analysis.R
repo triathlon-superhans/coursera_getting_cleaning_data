@@ -35,7 +35,7 @@
   # merge
 ymerged <- merge(xtrain, xtest, all=TRUE)
 xmerged <- merge(ytrain, ytest, all=TRUE)
-smerged <- merge(xtrain, ytest, all=TRUE)   
+smerged <- merge(strain, stest, all=TRUE)   
   
   
   
