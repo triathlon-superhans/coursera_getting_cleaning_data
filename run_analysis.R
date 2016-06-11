@@ -38,7 +38,7 @@ xmerged <- merge(ytrain, ytest, all=TRUE)
 smerged <- merge(strain, stest, all=TRUE)   
 
 # free up some space, because the objects are not deeded anymore, as they are merged into new ones
-rm (strain, xtrain, ytrain, stest, xtest, ystest)
+rm (strain, xtrain, ytrain, stest, xtest, ytest)
 
 # change class of V2 to character
 features[,2] = gsub('', '', features[,2])
