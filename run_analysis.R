@@ -29,7 +29,7 @@
   ytest <- read.table("test/y_test.txt", header = FALSE)
   xtest <- read.table("test/X_test.txt", header = FALSE)
   
-  featuress <- read.table("features.txt",sep="", header=FALSE)
+  features <- read.table("features.txt",sep="", header=FALSE)
   labels <- read.table("activity_labels.txt", header = FALSE)
   
 # merge
