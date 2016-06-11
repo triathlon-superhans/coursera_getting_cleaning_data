@@ -29,14 +29,21 @@
   ytest <- read.table("test/y_test.txt", header = FALSE)
   xtest <- read.table("test/X_test.txt", header = FALSE)
   
-  featuress <- read.table("features.txt")
+  featuress <- read.table("features.txt",sep="", header=FALSE)
   labels <- read.table("activity_labels.txt", header = FALSE)
   
-  # merge
+# merge
 ymerged <- merge(xtrain, xtest, all=TRUE)
 xmerged <- merge(ytrain, ytest, all=TRUE)
 smerged <- merge(strain, stest, all=TRUE)   
-  
+
+# free up some space, because the objects are not deeded anymore, as they are merged into new ones
+rm (strain, xtrain, ytrain, stest, xtest, ystest)
+
+# change class of V2 to character
+features[,2] = gsub('', '', features[,2])
+features_mean_std <- grep(".*Mean.*|.*Std.*",ignore.case = TRUE, features[,2])
+features_mean_std <- c(features_mean_std,"Activity", "Subject")
   
   
   
