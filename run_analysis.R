@@ -53,4 +53,4 @@ meanstdok = melt(meanstdonly, id.var = c("subject", "label"))
 
 #Prepare the final dataset, and write it to a file:
 dataready = dcast(meanstdok , subject + label ~ variable, mean)
-write.table(dataready, file="tidy_data.txt")
+write.table(dataready, file="tidy_data.txt,row.name=FALSE")
